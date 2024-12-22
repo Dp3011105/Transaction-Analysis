@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân tích Kỹ Thuật Coin</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+
+        h4 {
+            color: #eeeeee;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        select {
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid #444;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #6C63FF;
+        }
+
+        button {
+            background-color: #6C63FF;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        button:hover {
+            background-color: #5a54e5;
+        }
+
+        #selectedCoins {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ffffff;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .selected-coin {
+            margin: 5px;
+            padding: 10px;
+            background-color: #555;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .selected-coin span {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #ff5555;
+        }
+
+        #analysisResults {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #1c1c1c;
+            border-radius: 10px;
+        }
+
+        .result-item {
+            width: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .result-item h4 {
+            color: #6C63FF;
+        }
+
+        .result-item p {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .result-item {
+                width: 100%;
+            }
+
+            button {
+                width: 100%;
+                max-width: none;
+            }
+
+            select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Phân tích Kỹ Thuật Coin</h1>
+
+    <div class="container">
+        <h3>Chọn các đồng coin để phân tích:</h3>
+        
+        <select id="coinSelect" multiple>
+        </select>
+
+        <button id="addCoinButton">Thêm vào danh sách chọn</button>
+
+        <div id="selectedCoins">
+        </div>
+
+        <button id="analyzeButton">Phân tích</button>
+
+        <h3>Kết quả phân tích:</h3>
+        <div id="analysisResults"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
