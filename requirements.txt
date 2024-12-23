@@ -1,4 +1,5 @@
 Flask
-binance
+python-binance
 ta
 pandas
+requests
